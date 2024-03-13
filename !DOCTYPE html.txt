@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descargar Documento</title>
+    <style>
+        .mensaje {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .mensaje::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: #f9f9f9 transparent transparent transparent;
+        }
+        .nombre:hover .mensaje {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Hola Eduardo</h1>
+    <p class="nombre">¡Hola amigo! Haz clic en mi nombre:</p>
+    <div class="mensaje">Eres un pajero</div>
+    <p>Puedes descargar el documento haciendo clic en el siguiente enlace:</p>
+    <a href="https://terabox.com/s/1scAeSyVbbep6rvFwbzfA_g" target="_blank">Descargar Documento</a>
+    <div class="mensaje" style="margin-top: 20px;">Aquí está el trabajo</div>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const nombre = document.querySelector('.nombre');
+            const mensajePajero = document.querySelector('.nombre .mensaje');
+            const enlace = document.querySelector('a');
+            const mensajeDescarga = document.querySelectorAll('.mensaje')[1];
+            
+            nombre.addEventListener('click', () => {
+                mensajePajero.style.display = 'block';
+            });
+
+            nombre.addEventListener('mouseleave', () => {
+                mensajePajero.style.display = 'none';
+            });
+
+            enlace.addEventListener('click', () => {
+                mensajeDescarga.style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
